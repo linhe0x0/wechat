@@ -64,7 +64,7 @@ export class MinAppSDK {
     this.appID = appID
     this.appSecret = secret
 
-    logger.debug(`Init sdk with appID: ${appID}, secret: ${secret}`)
+    logger.debug(`Init minapp sdk with appID: ${appID}, secret: ${secret}`)
 
     return this
   }
