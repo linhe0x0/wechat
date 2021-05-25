@@ -17,7 +17,7 @@ export const defaultMinAppSDKOptions: SDKOptions = {
   debug: false,
 }
 
-export class MinAppSDK {
+export class MinApp {
   appID = ''
 
   appSecret = ''
@@ -60,7 +60,7 @@ export class MinAppSDK {
     }
   }
 
-  init(appID: string, secret: string): MinAppSDK {
+  init(appID: string, secret: string): MinApp {
     this.appID = appID
     this.appSecret = secret
 
@@ -69,7 +69,7 @@ export class MinAppSDK {
     return this
   }
 
-  config(options: Partial<SDKOptions>): MinAppSDK {
+  config(options: Partial<SDKOptions>): MinApp {
     this.options = _.assign(this.options, options)
 
     logger.level = this.options.debug ? LogLevel.Verbose : LogLevel.Warn
@@ -78,14 +78,9 @@ export class MinAppSDK {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  create(
-    appID: string,
-    secret: string,
-    options?: Partial<SDKOptions>
-  ): MinAppSDK {
-    return new MinAppSDK(options).init(appID, secret)
+  create(appID: string, secret: string, options?: Partial<SDKOptions>): MinApp {
+    return new MinApp(options).init(appID, secret)
   }
 }
 
-export const Minapp = MinAppSDK
-export const minapp = new MinAppSDK()
+export const minapp = new MinApp()
