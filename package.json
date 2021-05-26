@@ -3,7 +3,6 @@
   "version": "0.3.0",
   "description": "Wechat SDK",
   "main": "dist/index.js",
-  "types": "dist/types",
   "scripts": {
     "dev": "rimraf dist && tsc --watch",
     "build:types": "tsc --emitDeclarationOnly",

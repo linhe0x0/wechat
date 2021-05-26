@@ -1,5 +1,9 @@
 import { MINAPP_ERROR_MESSAGE } from '../constants'
-import { ErrorResponse } from '../types/request'
+
+interface ErrorResponse {
+  errcode: number
+  errmsg: string
+}
 
 export function throwError(name: string, message: string): void {
   const err = new Error(message)
@@ -10,7 +14,7 @@ export function throwError(name: string, message: string): void {
 }
 
 export function catchRequestError<T>(action: Promise<T>): Promise<T> {
-  return action.then((response: unknown) => {
+  return action.then((response: ErrorResponse | T) => {
     const { errcode, errmsg } = response as ErrorResponse
 
     if (errcode !== undefined && errcode !== 0) {
