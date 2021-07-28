@@ -1,12 +1,12 @@
 import _ from 'lodash'
 
+import logger from '../helpers/logger'
+import request from '../helpers/request'
 import {
   MINAPP_API_HOST,
   MINAPP_SUBSCRIBEMESSAGE_SEND,
   MINAPP_UNIFORMMESSAGE_SEND,
-} from '../constants'
-import logger from '../helpers/logger'
-import request from '../helpers/request'
+} from './constants'
 import { SDK } from './types'
 
 export interface SubscribeMessagePayload {

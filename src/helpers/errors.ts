@@ -1,4 +1,4 @@
-import { MINAPP_ERROR_MESSAGE } from '../constants'
+import { MINAPP_ERROR_MESSAGE } from '../minapp/constants'
 
 interface ErrorResponse {
   errcode: number

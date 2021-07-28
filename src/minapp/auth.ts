@@ -1,6 +1,6 @@
-import { MINAPP_API_HOST, MINAPP_AUTH_CODE2SESSION } from '../constants'
 import logger from '../helpers/logger'
 import request from '../helpers/request'
+import { MINAPP_API_HOST, MINAPP_AUTH_CODE2SESSION } from './constants'
 import { SDK } from './types'
 
 type GrantType = 'authorization_code'
