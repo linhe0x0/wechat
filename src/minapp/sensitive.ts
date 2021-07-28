@@ -32,9 +32,10 @@ export function decrypt(
 
   decipher.setAutoPadding(true)
 
-  let decoded = decipher.update(encryptedDataHex, 'binary', 'utf8')
-
-  decoded += decipher.final('utf8')
+  const decoded = Buffer.concat([
+    decipher.update(encryptedDataHex),
+    decipher.final(),
+  ]).toString('utf8')
 
   let result: unknown
 

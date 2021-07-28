@@ -1,6 +1,6 @@
 import crypto from 'crypto'
 
-type HexBase64Latin1Encoding = 'latin1' | 'hex' | 'base64'
+type HexBase64Latin1Encoding = 'hex' | 'base64'
 
 export function sha1(
   str: string,
