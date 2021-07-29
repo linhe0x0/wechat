@@ -5,12 +5,10 @@
   "main": "dist/index.js",
   "scripts": {
     "dev": "rimraf dist && tsc --watch",
-    "build:types": "tsc --emitDeclarationOnly",
     "prebuild": "npm run lint",
     "build": "rimraf dist && tsc",
     "type-check": "tsc --noEmit",
     "lint": "npm run type-check && eslint --ext ts ./src",
-    "lint-with-fix": "eslint --ext ts --fix ./src",
     "test": "jest --coverage --onlyChanged",
     "prepublishOnly": "npm run build"
   },
