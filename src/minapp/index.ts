@@ -11,13 +11,13 @@ import {
 } from './message'
 import { decrypt, SensitiveAPI } from './sensitive'
 import { SignatureAPI, verifySensitiveSignature } from './signature'
-import { SDKOptions } from './types'
+import { SDK, SDKOptions } from './types'
 
-export const defaultMinAppSDKOptions: SDKOptions = {
+const defaultMinAppSDKOptions: SDKOptions = {
   debug: false,
 }
 
-export class MinApp {
+export class MinApp implements SDK {
   appID = ''
 
   appSecret = ''
@@ -77,7 +77,6 @@ export class MinApp {
     return this
   }
 
-  // eslint-disable-next-line class-methods-use-this
   create(appID: string, secret: string, options?: Partial<SDKOptions>): MinApp {
     return new MinApp(options).init(appID, secret)
   }
