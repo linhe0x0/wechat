@@ -9,7 +9,8 @@
     "build": "rimraf dist && tsc",
     "type-check": "tsc --noEmit",
     "lint": "npm run type-check && eslint --ext ts ./src",
-    "test": "jest --coverage --onlyChanged",
+    "test": "jest --onlyChanged",
+    "test:cov": "jest --coverage --onlyChanged",
     "prepublishOnly": "npm run build"
   },
   "author": "sqrtthree <imsqrtthree@gmail.com>",
