@@ -1,10 +1,10 @@
 import crypto from 'crypto'
 
-type HexBase64Latin1Encoding = 'hex' | 'base64'
+type BinaryToTextEncoding = 'hex' | 'base64'
 
 export function sha1(
   str: string,
-  encoding: HexBase64Latin1Encoding = 'hex'
+  encoding: BinaryToTextEncoding = 'hex'
 ): string {
   const hash = crypto.createHash('sha1')
 
