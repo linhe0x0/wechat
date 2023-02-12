@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "consola": "~2.15.0",
-    "got": "~11.8.2",
+    "got": "~12.5.3",
     "lodash": "~4.17.20"
   },
   "devDependencies": {
